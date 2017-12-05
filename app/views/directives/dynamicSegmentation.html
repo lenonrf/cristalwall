@@ -1,0 +1,44 @@
+
+    <div ng-repeat="itemDynSeg in dynamicSegmentation" >
+      
+
+      <!-- DYNAMIC SEGMENTATION -->
+
+      <div class="col-md-12" style="padding-bottom: 20px;">
+        <div class="blockquote-box clearfix">
+          <div class="row" style="border-radius: 5px; padding: 15px; padding-top: 30px; padding-bottom: 30px;">
+            <div class="col-xs-12 col-md-4">
+              <div class="pull-left">
+
+                <img style="width: 100%; height: 100%;border-radius: 5px;" ng-src="{{itemDynSeg.smallImage}}"/>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-md-8">
+              <h2  style="color:#FFF; margin-top:5px; font-size: 35px;">{{itemDynSeg.title}}</h2>
+              <p>{{itemDynSeg.description}}</p>
+              
+              <p style="color:#FFF; margin-bottom: 0px; font-size: 20px;" ng-repeat="itemAnswer in itemDynSeg.answerList">
+              
+                <!-- ng-class="{itemSurveyShowOffer: itemAnswer.actionType === 'show_offer', itemSurveyShowDefault:  itemAnswer.actionType != 'show_offer'}"-->
+
+                <label class="itemSurveyShowOffer" id="label_radio_{{itemAnswer._id}}">
+
+                  <!-- transform: scale(1.6); -->
+                  <input type="radio" style=" margin-top: 0px;"
+                    id="answer_{{itemDynSeg._id}}"
+                    name="answer_{{itemDynSeg._id}}" 
+                    value="{{itemAnswer.actionType}}"                   
+                    ng-click="verifyOffersAvailable(); printRadioChoise(itemDynSeg.answerList, itemAnswer._id);">
+                  <i>&nbsp;&nbsp;{{itemAnswer.answer}}</i>
+                </label>
+                  
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>

@@ -1,0 +1,185 @@
+		
+		
+			<div class="containerCustom" style="margin-top: 0px;padding-top: 60px;"> 
+				
+
+
+			
+				<div class="row"> 
+
+					<div class="col-md-3" ng-show="isDesktop">
+						<div class="thumbnail" style="background: #3598db; border-color: #2784c3; text-align: center; margin-top: 30px; padding: 30px;" > 
+
+							<h3 style="background: none; text-transform: none; color:#ffb904; display: block; margin:0; margin-top: 0px; margin-bottom: 15px; font-size: 25px; text-shadow: 2px 2px 0px #2883cc;">Olá, {{user.name.split(' ').slice(0, 1).join(' ')}}. Seja muito bem vindo ao nosso clube.</h3>
+
+							<p class="ng-binding" style="color:#fff;">Conte aos seus amigos e os convide a participar do Gostei.club, você poderá aumentar a sua pontuação.</p><p class="ng-binding" style="color:#fff; margin-left: 25px; margin-right: 25px;">Quanto mais compartilhar, mais chances terá de receber o produto para testar em casa, 100% grátis.</p> <h3 style="background: none; text-transform: none; color:#ffb904; display: block; margin:0; margin-top: 15px; margin-bottom: 15px; font-size: 27px; text-shadow: 2px 2px 0px #2883cc;">Produto do mês escolhido</h3>
+
+							<div ng-show="user.products.length > 0" ng-repeat="product in user.products" style="border-radius: 5px; background: #fff; width: 100%; display: inline-block;" align="center">
+								<table style="width: 75%" align="center">
+
+									<tr>
+										<td align="center">
+											<img ng-src="{{product.image}}" style="width: 100%; padding-top: 20px;"> 
+										</td>
+									</tr>
+
+									<tr>
+										<td align="center"><p><strong>{{product.name}}</strong></p></td>
+									</tr>
+
+									<tr>
+										<td align="center">
+											<input type="button" style="background: url('http://ybox-3030.kxcdn.com/gosteiclub/stripe_0c77fe5f933ee65b6efe061fd8d13c02.png'); padding: 5px 20px; color:#fff; text-align: center; font-weight: bold; border:none; border-radius: 5px; height: 40px; margin-bottom: 25px; margin-top: 20px" name="" value="Acumule pontos" ng-click="showModal()">
+										</td>
+									</tr>
+
+								</table>
+							</div>
+
+							<input ng-show="user.products.length === 0" ng-click="$location.path('/amostrasgratis')" type="button" style="background: #759c0d; font-size:20px; padding: 5px 20px; color:#fff; text-align: center; font-weight: bold; border:none; border-radius: 5px; height: 40px; margin-bottom: 25px; margin-top: 20px" name="" value="Testar Amostras Grátis">
+
+
+							<h3 style="background: none; text-transform: none; color:#ffb904; display: block; margin:0; margin-top: 15px; margin-bottom: 15px; font-size: 32px;text-shadow: 2px 2px 0px #2883cc;">Sua pontuação atual</h3>
+													
+							<h3 style="background: none; text-transform: none; color:#1e5e9e; display: block; margin:0;  font-size: 24px; margin-top: -15px;">{{user.score}} Gostei Points</h3>
+
+							<input ng-click="showRanking()" type="button" style="background: #759c0d; font-size:20px; padding: 5px 20px; color:#fff; text-align: center; font-weight: bold; border:none; border-radius: 5px; height: 40px; margin-bottom: 25px; margin-top: 20px" name="" value="Ver ranking completo">
+
+
+						</div> 
+					</div> 
+				
+
+
+					<div class="col-md-9">
+
+						<div class="row" style="margin-top:30px; padding:10px; color:#fff; background-color:rgba(11, 34, 50, 0.50); border-radius: 5px; text-align: center; font-size: 32px; font-family: Josefin Sans,Helvetica Neue,Helvetica,Arial,sans-serif;">
+				        	Olá {{user.name.split(' ').slice(0, 1).join(' ')}}, bem-vindo ao nosso Clube de Oportunidades. <br>O Gostei.club trabalha pra te oferecer as melhores oportunidades da internet!        	
+				      	</div>
+
+				      	<div class="row" style="margin-top:20px;">
+
+							<div ng-repeat="item in balcony" class="col-sm-4 col-md-4"> 
+
+								<div class="thumbnail" style="padding: 10px;"> 
+									
+									<img ng-show="item.delivery.isUploadImage" ng-src="http://cdn.the-ybox.tech/{{item.delivery.largeImage}}" class="img-responsive" style="border-radius:5px;"> 
+
+									<img ng-show="!item.delivery.isUploadImage" ng-src="{{item.delivery.largeImage}}" class="img-responsive" style="border-radius:5px;"> 
+									
+
+										<div class="caption"> 
+											<div class="row"> 
+												<div class="col-md-12 col-xs-12"> 
+													<h3 style="margin:0px;"> <label class="ng-binding">{{item.mainQuestion.title}}</label></h3> 
+												</div> 
+											</div> 
+											<div class="row"> 
+												<div class="col-md-12 col-xs-12" > 
+													<p style="padding: 9px 15px;">{{item.mainQuestion.description}}</p> 
+												</div> 
+											</div>
+											<div class="row" style="padding-top: 15px"> 
+												<a class="btn btn-main" 
+													style="padding: 20px; line-height: 10px;"
+													ng-click="defineDeliveryStrategy(item)" role="button">
+													<b class="ng-binding">SIM, Eu quero esta Oportunidade!</b>
+												</a> 
+											</div> 
+											<p> </p> 
+										</div> 
+								</div> 
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+
+
+
+    <script type="text/ng-template" id="productTestSocialShare.html">
+        <div class="modal-header">
+            <!--<h3 class="modal-title">Modal title</h3>-->
+        </div>
+        <div class="modal-body">
+            
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <p align="center">De acordo com o seu perfil você esta participando do teste do produto:</p>
+                    </div>
+                    <div class="col-md-12">
+                        <h1 align="center" ng-repeat="product in user.products"><b>{{product.name}}</b></h1>
+                    </div>
+                    <div class="col-md-12">
+                        <p align="center">Serão escolhidos os 10 usuários que mais convidarem amigos para se inscrever em http://gostei.club</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p align="center">Quanto mais você compartilhar, mais chances terá de ganhar!</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p align="center">
+
+                            <img ng-click="shareFacebook()" style="cursor:pointer;" src="http://cdn.the-ybox.tech/btn-gostei-facebook.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img ng-click="shareTwitter()" style="cursor:pointer;" src="http://cdn.the-ybox.tech/btn-gostei-twitter.png">
+                        </p>
+                    </div>
+                    <div class="col-md-12">
+                        <p align="center">Ou envie esse link para os seus amigos</p>
+                    </div>
+
+                    <div class="col-md-12" >
+                        <p align="center" style="border-radius:5px;border:1px solid #CCC;width: 70%;margin-left: auto;margin-right: auto;padding: 10px;">http://gostei.club?share_user=912ncjdnfjs9213n3</p>
+                    </div>
+                </div>
+
+        </div>
+        <div class="modal-footer">
+            <!--<button class="btn btn-primary" ng-click="ok()">OK</button>-->
+            <button class="btn btn-default" ng-click="cancel()">Fechar</button>
+        </div>
+    </script>
+
+
+
+
+    <script type="text/ng-template" id="ranking.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Ranking</h3>
+        </div>
+        <div class="modal-body">
+            
+               <div class="row">
+                    <div class="col-md-12">
+			            <table class="table table-condensed">
+						    <thead>
+						      <tr>
+						        <th>Nome</th>
+						        <th>Email</th>
+						        <th>Gostei Points</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr ng-repeat="item in ranking">
+						        <td>{{item.name}}</td>
+						        <td>{{item.email}}</td>
+						        <td>{{item.score}}</td>
+						      </tr>
+						    </tbody>
+						</table>
+					</div>
+				</div>
+
+        </div>
+        <div class="modal-footer">
+            <!--<button class="btn btn-primary" ng-click="ok()">OK</button>-->
+            <button class="btn btn-default" ng-click="cancel()">Fechar</button>
+        </div>
+    </script>
+
+
+
+	

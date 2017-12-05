@@ -1,0 +1,147 @@
+
+	<!-- Offer Conversion: Gostei.club - BR -->
+	<iframe src="{{conversionURL | trustAsResourceUrl}}" 
+		scrolling="no" frameborder="0" width="1" height="1"></iframe>
+
+			<div class="containerCustom"> 
+				<div class="row"> 
+
+					<div class="col-md-3" ng-show="isDesktop" style="padding-top:30px;">
+						<div class="thumbnail" style="background: #3598db; border-color: #2784c3; text-align: center;     padding: 15px;" > 
+
+							<h3 style="background: none; text-transform: none; color:#ffb904; display: block; margin:0; margin-top: 15px; margin-bottom: 15px; font-size: 25px; text-shadow: 2px 2px 0px #2883cc;">Olá, {{user.name.split(' ').slice(0, 1).join(' ')}}. Quer saber como o gostei funciona?</h3>
+
+							<p class="ng-binding" style="color:#fff; margin-left: 25px; margin-right: 25px;">É simples !!! Quanto mais compartilhar e  interagir com nossas oportunidades, mais chances terá de receber o produto para testar em casa, 100% grátis.</p>
+
+							<p class="ng-binding" style="color:#fff;">Nós do gostei.club trabalhamos pra entender melhor suas preferencias, assim podemos mostrar para você as melhores oportunidades da internet, sendo assim montamos um sistema de pontuação baseado nas suas preferencias.</p> 
+
+							<h3 style="background: none; text-transform: none; color:#ffb904; display: block; margin:0; margin-top: 30px; margin-bottom: 15px; font-size: 25px; text-shadow: 2px 2px 0px #2883cc;">Destaque do mês:</h3>
+
+							<div  style="border-radius: 5px; background: #fff; width: 100%; display: inline-block;" align="center">
+								<table style="width: 75%" align="center">
+
+									<tr>
+										<td align="center">
+											<img ng-src="{{products[0].image}}" style="width: 100%; padding-top: 20px;"> 
+										</td>
+									</tr>
+
+									<tr>
+										<td align="center"><p><strong>{{products[0].name}}</strong></p></td>
+									</tr>
+
+									<tr>
+										<td align="center">
+											<input type="button" style="background: url('http://ybox-3030.kxcdn.com/gosteiclub/stripe_0c77fe5f933ee65b6efe061fd8d13c02.png'); padding: 5px 20px; color:#fff; text-align: center; font-weight: bold; border:none; border-radius: 5px; height: 40px; margin-bottom: 25px; margin-top: 20px" name="" value="Compartilhe (500 pontos)" ng-click="showModal()">
+										</td>
+									</tr>
+
+								</table>
+							</div>
+
+
+							<h3 style="background: none; text-transform: none; color:#ffb904; display: block; margin:0; margin-top: 30px; margin-bottom: 15px; font-size: 25px;text-shadow: 2px 2px 0px #2883cc;">Sua pontuação atual:</h3>
+						
+							<h3 style="background: none; text-transform: none; color:#1e5e9e; display: block; margin:0;  font-size: 24px; margin-top: 15px;">{{user.score}} Gostei Points</h3>
+
+							<input ng-click="showRanking()" type="button" style="background: #759c0d; font-size:20px; padding: 5px 20px; color:#fff; text-align: center; font-weight: bold; border:none; border-radius: 5px; height: 40px; margin-bottom: 25px; margin-top: 20px" name="" value="Ver ranking completo">
+
+						</div> 
+					</div> 
+				
+
+
+					<div class="col-md-9">
+						<question-hall ng-if="questionHall"></question-hall>	
+					</div>
+
+					
+				</div>
+			</div>
+
+
+	    <script type="text/ng-template" id="productTestSocialShare.html">
+        <div class="modal-header">
+            <!--<h3 class="modal-title">Modal title</h3>-->
+        </div>
+        <div class="modal-body">
+            
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <p align="center">De acordo com o seu perfil você esta participando do teste do produto:</p>
+                    </div>
+                    <div class="col-md-12">
+                        <h1 align="center" ng-repeat="product in user.products"><b>{{product.name}}</b></h1>
+                    </div>
+                    <div class="col-md-12">
+                        <p align="center">Serão escolhidos os 10 usuários que mais convidarem amigos para se inscrever em http://gostei.club</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p align="center">Quanto mais você compartilhar, mais chances terá de ganhar!</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p align="center">
+
+                            <img ng-click="shareFacebook()" style="cursor:pointer;" src="http://cdn.the-ybox.tech/btn-gostei-facebook.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img ng-click="shareTwitter()" style="cursor:pointer;" src="http://cdn.the-ybox.tech/btn-gostei-twitter.png">
+                        </p>
+                    </div>
+                    <div class="col-md-12">
+                        <p align="center">Ou envie esse link para os seus amigos</p>
+                    </div>
+
+                    <div class="col-md-12" >
+                        <p align="center" style="border-radius:5px;border:1px solid #CCC;width: 70%;margin-left: auto;margin-right: auto;padding: 10px;">http://gostei.club?share_user=912ncjdnfjs9213n3</p>
+                    </div>
+                </div>
+
+        </div>
+        <div class="modal-footer">
+            <!--<button class="btn btn-primary" ng-click="ok()">OK</button>-->
+            <button class="btn btn-default" ng-click="cancel()">Fechar</button>
+        </div>
+    </script>
+
+
+
+
+    <script type="text/ng-template" id="ranking.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Ranking</h3>
+        </div>
+        <div class="modal-body">
+            
+               <div class="row">
+                    <div class="col-md-12">
+			            <table class="table table-condensed">
+						    <thead>
+						      <tr>
+						        <th>Nome</th>
+						        <th>Email</th>
+						        <th>Gostei Points</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr ng-repeat="item in ranking">
+						        <td>{{item.name}}</td>
+						        <td>{{item.email}}</td>
+						        <td>{{item.score}}</td>
+						      </tr>
+						    </tbody>
+						</table>
+					</div>
+				</div>
+
+        </div>
+        <div class="modal-footer">
+            <!--<button class="btn btn-primary" ng-click="ok()">OK</button>-->
+            <button class="btn btn-default" ng-click="cancel()">Fechar</button>
+        </div>
+    </script>
+
+
+
+
+
+

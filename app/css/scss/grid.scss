@@ -1,0 +1,50 @@
+// variáveis da grade
+$grid-columns: 12;
+$grid-max-width: 65em;
+ 
+// breakpoints
+$breakpoint-small: "only screen and (min-width: 36em)";
+$breakpoint-medium: "only screen and (min-width: 48em)";
+$breakpoint-large: "only screen and (min-width: 64em)";
+
+.wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+[class*='col-'] {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+ 
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        -ms-flex: 0 0 100% / $grid-columns * $i;
+        flex: 0 0 100% / $grid-columns * $i;
+        max-width: 100% / $grid-columns * $i;
+    }
+}
+@media #{$breakpoint-medium} {
+    .wrapper {
+        max-width: $grid-max-width;
+    }
+}

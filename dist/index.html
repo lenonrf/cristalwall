@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href="/">
+	<title>Cristal Club</title>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.min.css">
+</head>
+<body ng-app="gosteiclubApp">
+	<header class="navbar">
+		<div class="wrapper navbar-container">
+			<a href="" title="Cristal Club" class="logo"><img src="images/logo_cristalclub.png" alt="Cristal Club Logo"></a>
+			<ul class="navbar-nav flex-row">
+				<li class="navbar-item"><a class="navbar-link" href="" title="Oportunidades">Oportunidades</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="" title="Depoimentos">Depoimentos</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="" title="Cadastre-se">Cadastre-se</a></li>
+			</ul>
+		</div>
+	</header><!-- /header -->
+
+
+	<!-- MAIN -->
+        <div ng-view="" id="mainView" autoscroll="true"></div>
+
+        
+
+	<footer class="footer">
+		<div class="wrapper">
+			<h2>Depoimentos</h2>
+			<p>Lorem ipsum dolor sit amet</p>
+			<ul class="testimony-list">
+				<li class="testimony-item">
+					<p>Realmente chegou. Agora vou me candidatar para todas as oportunidades!"
+					<img src="images/img_user.png" alt="imagem depoimento">
+					<strong>Claudia Rodrigues</strong></p>
+				</li>
+				<li class="testimony-item">
+					<p>Realmente chegou. Agora vou me candidatar para todas as oportunidades!"
+					<img src="images/img_user.png" alt="imagem depoimento">
+					<strong>Claudia Rodrigues</strong></p>
+				</li>
+			</ul>
+			<p>Venha conhecer você também!</p>
+			<span class="bt">Quero conhecer!</span>
+		</div>
+	</footer><!-- /footer -->
+
+
+</body>
+
+   <!-- build:js(.) scripts/vendor.js -->
+            <!-- bower:js -->
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+            <script src="bower_components/jquery/dist/jquery.js"></script>
+            <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-animate.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-cookies.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-resource.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-route.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-sanitize.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-touch.min.js"></script>
+            <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+            <script src="bower_components/angular-bootstrap-show-errors/src/showErrors.js"></script>
+            <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+            <script src="bower_components/SHA-1/sha1.js"></script>
+            <script src="bower_components/angulartics/src/angulartics.js"></script>
+            <script src="bower_components/angular-ui-mask/dist/mask.js"></script>
+            <script src="bower_components/re-tree/re-tree.js"></script>
+            <script src="bower_components/ng-device-detector/ng-device-detector.js"></script>
+            <script src="bower_components/angular-translate/angular-translate.js"></script>
+            <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
+            <script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
+            <script src="bower_components/angular-socialshare/angular-socialshare.js"></script>
+            <script src="bower_components/angular-viacep/dist/angular-viacep.js"></script>
+            <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+            <!-- endbower -->
+            <!-- endbuild -->
+
+              <!-- build:js({.tmp,app}) scripts/scripts.js -->
+              <script src="scripts/app.js"></script>
+              <script src="scripts/controllers/main.js"></script>
+              <script src="scripts/controllers/corredor.js"></script>
+              <script src="scripts/controllers/home.js"></script>
+              <script src="scripts/controllers/menu.js"></script>
+              <script src="scripts/controllers/pushnotification.js"></script>
+              <script src="scripts/controllers/obrigado.js"></script>
+              <script src="scripts/controllers/balcao.js"></script>
+              <script src="scripts/controllers/amostras.js"></script>
+              <script src="scripts/controllers/meusdados.js"></script>
+              <script src="scripts/controllers/cupons.js"></script>
+              <script src="scripts/controllers/perguntas.js"></script>
+               <script src="scripts/controllers/receitas.js"></script>
+               <script src="scripts/controllers/receitaDetail.js"></script>
+              
+              <script src="scripts/directives/dynamicSegmentation.js"></script>
+              <script src="scripts/directives/survey.js"></script>
+              <script src="scripts/directives/questionHall.js"></script>
+              
+              <script src="scripts/services/utils.js"></script>
+              <script src="scripts/services/user.js"></script>
+              <script src="scripts/services/menu.js"></script>
+              <script src="scripts/services/products.js"></script>
+              <script src="scripts/services/login.js"></script>
+              <script src="scripts/services/canal.js"></script>
+              <script src="scripts/services/allin.js"></script>
+              <script src="scripts/services/partners.js"></script>
+              <script src="scripts/services/malling.js"></script>
+              <script src="scripts/services/sponsoring.js"></script>
+              <script src="scripts/services/survey.js"></script>
+              <script src="scripts/services/wsClient.js"></script>
+              <script src="scripts/services/wsUriBuilder.js"></script>
+              <script src="scripts/services/stats.js"></script>
+              <script src="scripts/services/sessionLanding.js"></script>
+              <script src="scripts/services/termsConditions.js"></script>
+              <script src="scripts/services/receitas.js"></script>
+
+              <script src="scripts/providers/appTranslateProviderBR.js"></script>
+              <script src="scripts/providers/appTranslateProviderFR.js"></script>
+              <script src="scripts/providers/appTranslateProviderMX.js"></script>
+
+
+                <!-- endbuild -->
+
+</html>

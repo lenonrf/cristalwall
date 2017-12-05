@@ -1,0 +1,79 @@
+    
+    <div class="featured-box">
+        <div class="wrapper">
+            <div class="time-line">
+                <span class="time-step">
+                    <span class="time-title">Faça o seu cadastro no Cristal.club</span>
+                    <span class="time-ball">Início</span>
+                </span>
+                <span class="time-step">
+                    <span class="time-title">Respondas perguntas de patrocinadores</span>
+                    <span class="time-ball"></span>
+                </span>
+                <span class="time-step">
+                    <span class="time-title">Responda sobre seus hábitos</span>
+                    <span class="time-ball"></span>
+                </span>
+                <span class="time-step">
+                    <span class="time-title">Receba seu mapa astral por apenas R$1,99</span>
+                    <span class="time-ball"><img src="images/icon_flag.png" alt=""></span>
+                </span>
+            </div>
+            <div class="form-box" ng-show="showFormFields">
+                <form>
+                    <h2 id="messageStatus" name="messageStatus">Passo 1</h2>
+                    <label>Nome
+                        <input ng-style="{'background-color': bgUserColor}" type="text" name="lname" id="lname" class="input-text" ng-model="user.name" style="margin-bottom: 15px;"> 
+                    </label> 
+                    <label>Email
+                        <input ng-style="{'background-color': bgEmailColor}" type="email" name="email" id="email" class="input-text" ng-model="user.email" style="margin-bottom:15px"> 
+                    </label>
+                    <label>Celular
+                       <input ng-style="{'background-color': bgCellphoneColor}" type="text" 
+                                            name="cellphone" id="cellphone" class="input-text"
+                                            ui-mask="(99) 9999-99999"   ng-model="user.cellphone" 
+                                            style="margin-bottom:15px;">
+                    </label>
+                    <button id="checkoutButton" class="bt large block"  type="button" ng-disabled="disableButton" ng-class="disableButton ? 'btn-main-disable btn-center' : 'btn-main btn-center'" ng-click="checkoutStepOne(user)">Enviar! </button> 
+                </form>
+            </div>
+
+            <div class="form-box" ng-show="showFormFields_STEP2">
+                <form>
+                    <h2 id="messageStatus2" name="messageStatus2">Passo 2</h2>
+                    <label>Data Nascimento
+                        <input ng-style="{'background-color': bgBirthColor}" ui-mask="99/99/9999" type="text" name="birthDate" id="birthDate" class="input-text"
+                        ng-bind="user.birthDate | date:'dd/MM/yyyy'"  ng-model="user.birthDate">
+                    </label> 
+                    <label>Hora Nascimento
+                        <input ui-mask="99:99" ng-style="{'background-color': bgEmailColor}" name="birthHour" id="birthHour" class="input-text" ng-model="user.birthHour" style="margin-bottom:15px"> 
+                    </label>
+                    <label>Cidade Natal
+                       <input ng-style="{'background-color': bgEmailColor}" id="city" class="input-text" ng-model="user.cidade" style="margin-bottom:15px">
+                    </label>
+                    <button class="bt large block" type="button" ng-disabled="disableButton"
+                        ng-click="checkoutStepTwo(user)">Enviar!
+                    </button>
+               
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="wrapper">
+        <p>A posição dos astros no momento exato do seu nascimento revela muito sobre a sua personalidade, as oportunidades e os desafios que te acompanharão durante toda a sua vida. Conhecer seu mapa astral é uma forma de otimizar seu potencial e também de contornar e desenvolver pontos que irão fazer de você uma pessoa melhor. Este documento será disponibilizado pelo Astrocentro, a maior comunidade online de esotéricos do Brasil.<br>
+        <strong>O valor original é R$19,90, mas ao responder às perguntas dos nossos patrocinadores esse valor cairá para até R$1,99. Aproveite!</strong></p>
+
+        <p>O Cristal Club  um clube de vantagens e descontos desenvolvido para você pelo grupo Canoa Digital. São centenas de parceiros te esperando com as melhores ofertas do mercado e, ao final das perguntas respondidas, você sempre terá acesso a uma oportunidade única. Faça seu cadastro e saiba como garantir as melhores ofertas!</p>
+        <div class="icons-section">
+            <div class="row">
+                <div class="col-4 icons-item"><img src="images/icon_cap.png" alt="">Escolas de idiomas</div>
+                <div class="col-4 icons-item"><img src="images/icon_phone.png" alt="">Serviços de telefonia móvel</div>
+                <div class="col-4 icons-item"><img src="images/icon_laptop.png" alt="">Serviços de internet</div>
+                <div class="col-4 icons-item"><img src="images/icon_bowl.png" alt="">Cosméticos naturais</div>
+                <div class="col-4 icons-item"><img src="images/icon_heart.png" alt="">Sites de relacionamentos</div>
+                <div class="col-4 icons-item"><img src="images/icon_box.png" alt="">E muito mais...</div>
+            </div>
+            <span class="bt">Participar</span>
+        </div>
+    </div>
